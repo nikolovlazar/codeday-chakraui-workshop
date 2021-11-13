@@ -19,8 +19,12 @@ import ArrowRight from '../src/icons/arrow-right';
 
 const InfoCard = ({ title, description }) => {
   return (
-    <VStack spacing={4} alignItems='flex-start'>
-      <CodeDayLogo color='white' w={12} h={12} />
+    <VStack spacing={{ base: 2, '2xl': 4 }} alignItems='flex-start'>
+      <CodeDayLogo
+        color='white'
+        w={{ base: 6, '2xl': 12 }}
+        h={{ base: 6, '2xl': 12 }}
+      />
       <Text fontSize='lg' color='white' fontWeight='bold'>
         {title}
       </Text>
@@ -47,15 +51,19 @@ const IndexPage = () => {
         <VStack
           flex={1}
           bg={useColorModeValue('brand.500', 'brand.800')}
-          spacing={14}
+          spacing={{ base: 8, '2xl': 14 }}
           p={12}
           alignItems='stretch'
         >
           <VStack spacing={4} alignItems='flex-start'>
-            <Heading size='xl' color='white'>
+            <Heading fontSize={{ base: '2xl', '2xl': '4xl' }} color='white'>
               CodeDay.org
             </Heading>
-            <Heading size='lg' color='whiteAlpha.800' fontWeight='normal'>
+            <Heading
+              fontSize={{ base: 'xl', '2xl': '2xl' }}
+              color='whiteAlpha.800'
+              fontWeight='normal'
+            >
               There's a place in tech for everyone.
             </Heading>
           </VStack>
@@ -74,7 +82,7 @@ const IndexPage = () => {
         </VStack>
       )}
       <VStack
-        minW={{ base: 'full', xl: '2xl' }}
+        flex={1}
         p={{ base: 4, md: 12 }}
         justifyContent='space-between'
         alignItems='stretch'
